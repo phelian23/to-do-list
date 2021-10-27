@@ -36,4 +36,4 @@ function addTaskToList(task) {
   list.appendChild(listItem);
 }
 
-tasks.forEach((task) => addTaskToList(task))
+tasks.forEach((task) => addTaskToList(task));
