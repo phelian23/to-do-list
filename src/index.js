@@ -27,7 +27,7 @@ function addTaskToList(task) {
       <div class="task disflex padbor">
       <div class="disflex taskp">
       <input type="checkbox" class="checkbox" placeholder="">
-      <p>${task.description}</p>
+      <p class="taskp1">${task.description}</p>
       </div>
       <span id="list-icon"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
       </div>
