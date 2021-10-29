@@ -43,8 +43,31 @@ ul {
 }
 
 #list-icon {
-  padding-right: 5%;
   color: #797676;
+}
+
+.delete {
+  padding-right: 5%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.delete #list-icon-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 69;
+}
+
+.delete:hover #list-icon-top {
+  display: inline;
+  pointer-events: none;
+}
+
+.delete:hover #list-icon {
+  color: transparent;
 }
 
 .taskadd {
@@ -66,4 +89,5 @@ ul {
   padding: 2%;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  cursor: pointer;
 }
