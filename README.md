@@ -2,7 +2,7 @@
 
 # To Do List
 
-> Creating an App for daily todo list.
+> Creating an App for daily todo list. Where the user can add, check and update daily task.
 
 ![screenshot](./src/2021-10-27.png)
 
