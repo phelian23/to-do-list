@@ -17,7 +17,7 @@
 
 ## Application Page url
 
-https://phelian23.github.io/to-do-list/
+Here is a link to the [live](https://phelian23.github.io/to-do-list/) demo
 
 
 ## Getting Started
