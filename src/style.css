@@ -79,6 +79,8 @@ ul {
 }
 
 .taskp1 {
+  border: none;
+  padding: 3% 0;
   margin-left: 15px;
 }
 

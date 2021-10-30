@@ -11,7 +11,7 @@ function addTaskToList(task) {
           <div class="task disflex padbor">
           <div class="disflex taskp ">
           <input type="checkbox" id = "check-${task.index}" placeholder="">
-          <p class="taskp1" id = "text-${task.index}">${task.description}</p>
+          <input type="textarea" class="taskp1" id = "text-${task.index}" value = "${task.description}">
           </div>
           <div class="delete" id =${task.id}>
           <span id="list-icon"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></span>
@@ -29,9 +29,13 @@ function displayTodoList() {
   const todos = Task.getTodos();
   todos.forEach((task) => {
     addTaskToList(task);
+
     const descript = document.querySelector(`#text-${task.index}`);
+    const isComp = document.querySelector(`#check-${task.index}`);
+
     if (task.completed === true) {
       descript.style.textDecoration = 'line-through';
+      isComp.checked = 'true';
     } else {
       descript.style.textDecoration = 'none';
     }
@@ -80,3 +84,13 @@ document.querySelector('#tasklist').addEventListener('click', (e) => {
 
   Task.removeTask(e.target.id);
 });
+
+for (let i = 0; i < listArray.length; i += 1) {
+  const descript = document.querySelector(`#text-${listArray[i].index}`);
+  descript.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      Task.editTask(i, listArray, descript);
+    }
+    localStorage.setItem('todos', JSON.stringify(listArray));
+  });
+}
