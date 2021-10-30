@@ -17,7 +17,7 @@
 
 ## Application Page url
 
-https://phelian23.github.io/to-do-list/
+Here is a link to the [live]( https://deploy-preview-3--zen-perlman-c7756d.netlify.app) demo
 
 
 ## Getting Started

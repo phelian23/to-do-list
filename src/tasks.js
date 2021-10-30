@@ -35,7 +35,10 @@ export default class Task {
       }
     });
     localStorage.setItem('todos', JSON.stringify(todos));
-    window.location.reload();
+  }
+
+  static editTask(i, listArray, descript) {
+    listArray[i].description = descript.value;
   }
 
   static clearCompleted() {
