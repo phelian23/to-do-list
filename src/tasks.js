@@ -17,7 +17,7 @@ export default class Task {
 
   static addTask(task) {
     const tasks = Task.getTodos();
-    tasks.push(task);
+    tasks[tasks.length] = task;
     localStorage.setItem('todos', JSON.stringify(tasks));
   }
 
@@ -29,12 +29,11 @@ export default class Task {
 
   static removeTask(id) {
     const todos = Task.getTodos();
-    todos.forEach((todo, index) => {
-      if (todo.id === id) {
-        todos.splice(index, 1);
-      }
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    newTodos.forEach((object, index) => {
+      object.index = index + 1;
     });
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(newTodos));
   }
 
   static editTask(i, listArray, descript) {
