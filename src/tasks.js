@@ -30,9 +30,6 @@ export default class Task {
   static removeTask(id) {
     const todos = Task.getTodos();
     const newTodos = todos.filter((todo) => todo.id !== id);
-    newTodos.forEach((object, index) => {
-      object.index = index + 1;
-    });
     localStorage.setItem('todos', JSON.stringify(newTodos));
   }
 
@@ -43,9 +40,6 @@ export default class Task {
   static clearCompleted() {
     const todos = Task.getTodos();
     const newTodos = todos.filter((todo) => todo.completed !== true);
-    newTodos.forEach((object, index) => {
-      object.index = index + 1;
-    });
     localStorage.setItem('todos', JSON.stringify(newTodos));
     window.location.reload();
   }
