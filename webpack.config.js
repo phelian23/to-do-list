@@ -1,4 +1,4 @@
-const path = require('path');
+const publicPath = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -13,6 +13,7 @@ module.exports = {
     }),
   ],
   output: {
+    filename: 'main.js',
     publicPath: "/to-do=list/",
   },
   module: {
