@@ -1,4 +1,4 @@
-const publicPath = require('path');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -14,7 +14,8 @@ module.exports = {
   ],
   output: {
     filename: 'main.js',
-    publicPath: "/to-do=list/",
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: "/to-do-list/",
   },
   module: {
     rules: [
