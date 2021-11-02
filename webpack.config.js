@@ -6,7 +6,7 @@ module.exports = {
   devServer: {
     static: './dist',
   },
-  mode: 'production',
+  mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -15,6 +15,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
     publicPath: '/to-do-list/',
   },
   module: {

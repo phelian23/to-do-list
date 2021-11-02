@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phelian23/webpack-test.git"
+    "url": "git+https://github.com/phelian23/to-do-list.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/phelian23/webpack-test/issues"
+    "url": "https://github.com/phelian23/to-do-list/issues"
   },
-  "homepage": "https://github.com/phelian23/webpack-test#readme",
+  "homepage": "https://github.com/phelian23/to-do-list#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.0",
