@@ -6,7 +6,9 @@ const add = () => {
   const input = document.querySelector('.taskadd');
   input.value = 'something';
   const inputContainer = document.createElement('li');
-  inputContainer.textContent = input;
+  inputContainer.textContent = input.value;
   const tasklist = document.querySelector('#tasklist');
   return Array.from(tasklist.appendChild(inputContainer));
 }
+
+export default add;
