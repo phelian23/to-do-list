@@ -1,4 +1,4 @@
-export default function isComplete(list, isComp, descript) {
+const isComplete = (list, isComp, descript) => {
   if (isComp.checked) {
     list.completed = true;
     descript.style.textDecoration = 'line-through';
@@ -7,3 +7,5 @@ export default function isComplete(list, isComp, descript) {
     descript.style.textDecoration = 'none';
   }
 }
+
+export default isComplete;

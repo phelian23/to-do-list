@@ -27,7 +27,10 @@ function addTaskToList(task) {
 
 function displayTodoList() {
   const todos = Task.getTodos();
+  let i = 0;
   todos.forEach((task) => {
+    i= i+1;
+    task.index = i;
     addTaskToList(task);
 
     const descript = document.querySelector(`#text-${task.index}`);
@@ -64,8 +67,11 @@ inputs.addEventListener('keydown', (e) => {
 displayTodoList();
 
 const listArray = Task.getTodos();
+let i = 0;
 
 listArray.forEach((list) => {
+  i= i+1;
+  list.index = i;
   const descript = document.querySelector(`#text-${list.index}`);
   const isComp = document.querySelector(`#check-${list.index}`);
   isComp.addEventListener('change', () => {
