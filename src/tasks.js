@@ -33,8 +33,8 @@ export default class Task {
     localStorage.setItem('todos', JSON.stringify(newTodos));
   }
 
-  static editTask(i, listArray, descript) {
-    listArray[i].description = descript.value;
+  static editTask(list, descript) {
+    list.description = descript.value;
   }
 
   static clearCompleted() {

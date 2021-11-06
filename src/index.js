@@ -8,7 +8,7 @@ function addTaskToList(task) {
   const listItem = document.createElement('li');
 
   listItem.innerHTML = `
-          <div class="task disflex padbor">
+          <div class="task disflex header">
           <div class="disflex taskp ">
           <input type="checkbox" id = "check-${task.index}" placeholder="">
           <input type="textarea" class="taskp1" id = "text-${task.index}" value = "${task.description}">
@@ -65,15 +65,15 @@ displayTodoList();
 
 const listArray = Task.getTodos();
 
-for (let i = 0; i < listArray.length; i += 1) {
-  const descript = document.querySelector(`#text-${listArray[i].index}`);
-  const isComp = document.querySelector(`#check-${listArray[i].index}`);
+listArray.forEach((list) => {
+  const descript = document.querySelector(`#text-${list.index}`);
+  const isComp = document.querySelector(`#check-${list.index}`);
   isComp.addEventListener('change', () => {
-    isComplete(i, listArray, isComp, descript);
+    isComplete(list, isComp, descript);
 
     localStorage.setItem('todos', JSON.stringify(listArray));
   });
-}
+});
 
 document.querySelector('.footer').addEventListener('click', () => {
   Task.clearCompleted();
@@ -85,12 +85,12 @@ document.querySelector('#tasklist').addEventListener('click', (e) => {
   Task.removeTask(e.target.id);
 });
 
-for (let i = 0; i < listArray.length; i += 1) {
-  const descript = document.querySelector(`#text-${listArray[i].index}`);
+listArray.forEach((list) => {
+  const descript = document.querySelector(`#text-${list.index}`);
   descript.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      Task.editTask(i, listArray, descript);
+      Task.editTask(list, descript);
     }
     localStorage.setItem('todos', JSON.stringify(listArray));
   });
-}
+});
